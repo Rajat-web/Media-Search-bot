@@ -22,7 +22,7 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Messages
 START_MSG = """
-**Hi {}, I'm Modzilla Apk Bot**
+**Hi, I'm Modzilla Apk Bot**
 
 Here You Can Search Files In Inline Mode. Just Press Follwing Buttons And Start Searching.
 """
