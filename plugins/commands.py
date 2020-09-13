@@ -12,9 +12,11 @@ async def start(bot, message):
         InlineKeyboardButton('Go Inline', switch_inline_query=''),
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
-    await message.reply(
-        text=START_MSG.format(fullname), 
-        reply_markup=reply_markup)
+    chat = update.message.chat
+    fullname = f"{chat.first_name} {chat.last_name}" if chat.last_name else chat.first_name 
+    update.message.reply_text(WELCOME_MSG.format(fullname), 
+                              reply_markup=markup, 
+                              parse_mode="HTML")
 
 
 @Client.on_message(filters.command('channel') & filters.chat(ADMINS))
