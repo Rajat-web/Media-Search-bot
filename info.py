@@ -24,7 +24,7 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 START_MSG = """
 **Hi, I'm Modzilla Apk Bot**
 
-Here You Can Search Files In Inline Mode. Just Press Follwing Buttons And Start Searching.
+I'm a simple inline app searching bot which helps you to search and share applications.\nHit the go inline button or call me from any chat just by typing my username in the text field.\nNB: Make sure the name of the app you are looking for is correct else bot cannot index it while searching.
 """
 
 SHARE_BUTTON_TEXT = 'Checkout {username} for searching files'
