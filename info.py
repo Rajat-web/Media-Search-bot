@@ -17,6 +17,6 @@ DATABASE_NAME = environ['DATABASE_NAME']
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Messages
-START_MSG = """<b>Hi {}!</b>\n<b>I'm a simple inline app searching bot which helps you to search and share applications and softwares.</b>\n<b>Hit the go inline button or call me from any chat just by typing my username in the text field.</b>\n<b>NB: Make sure the name of the app you are looking for is correct else bot cannot index it while searching.</b>""""
+START_MSG = """"<b>Hi {}!</b>\n<b>I'm a simple inline app searching bot which helps you to search and share applications and softwares.</b>\n<b>Hit the go inline button or call me from any chat just by typing my username in the text field.</b>\n<b>NB: Make sure the name of the app you are looking for is correct else bot cannot index it while searching.</b>""""
 
 SHARE_BUTTON_TEXT = 'Checkout {username} for searching files'
