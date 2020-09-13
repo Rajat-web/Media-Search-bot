@@ -14,7 +14,7 @@ async def start(bot, message):
     reply_markup = InlineKeyboardMarkup(buttons)
     chat = update.message.chat
     fullname = f"{chat.first_name} {chat.last_name}" if chat.last_name else chat.first_name 
-    update.message.reply_text(WELCOME_MSG.format(fullname), 
+    update.message.reply_text(START_MSG.format(fullname), 
                               reply_markup=markup, 
                               parse_mode="HTML")
 
