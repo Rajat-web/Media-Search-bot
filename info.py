@@ -22,7 +22,7 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Messages
 START_MSG = """
-**Hi {fullname},**
+**Hi {},**
 
 **I'm a simple inline app searching bot which helps you to search and share applications.\nHit the go inline button or call me from any chat just by typing my username in the text field.\nNB: Make sure the name of the app you are looking for is correct else bot cannot index it while searching**.
 """
