@@ -12,8 +12,9 @@ async def start(bot, message):
         InlineKeyboardButton('Go Inline', switch_inline_query=''),
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
+    fullname = f"{chat.first_name} {chat.last_name}" if chat.last_name else chat.first_name
     await message.reply(
-        text=START_MSG.format(username=user.fullname),
+        text=START_MSG.format(fullname),
         reply_markup=reply_markup)
 
 
