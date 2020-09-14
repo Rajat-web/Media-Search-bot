@@ -1,6 +1,6 @@
 ## [Media Search bot](https://github.com/Mahesh0253/Media-Search-bot)
 
-* Index channel files for inline search. 
+* Index channel files for inline search.
 * When you going to post file on telegram channel this bot will save that in database, So you and your subscribers can easily search that in inline mode.
 * This bot supports document, video and audio file formats with caption.
 
