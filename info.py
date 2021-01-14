@@ -26,9 +26,9 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Messages
 START_MSG = """
-**Hi {username}, Welcome To Modzilla Apk Bot**
+**Hi {username}, Welcome To Torrent Flix Bot**
 
-**I'm a simple inline app searching bot which helps you to search and share android Premium/Modded Applications from all across Telegram.\nHit the go inline button or call me from any chat just by typing my username in the text field.\nNB: Make sure the name of the application you are looking for is correct else bot cannot index it while searching.**
+**I'm a simple inline app searching bot which helps you to search and share TORRENT FILES from all across Telegram.\nHit the go inline button or call me from any chat just by typing my username in the text field.\nNB: Make sure the name of the TORRENT FILE you are looking for is correct else bot cannot index it while searching.**
 """
 
 SHARE_BUTTON_TEXT = 'Checkout {username} for searching files'
