@@ -11,10 +11,13 @@ BOT_TOKEN = environ['BOT_TOKEN']
 # Bot settings
 MAX_RESULTS = int(environ.get('MAX_RESULTS', 10))
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
+USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
 
-# Admins & Channels
+# Admins, Channels & Users
 ADMINS = [int(admin) if re.search('^\d+$', admin) else admin for admin in environ['ADMINS'].split()]
-CHANNELS = [int(channel) if re.search('^.\d+$', channel) else channel for channel in environ['CHANNELS'].split()]
+CHANNELS = [int(ch) if re.search('^.\d+$', ch) else ch for ch in environ['CHANNELS'].split()]
+auth_users = [int(user) if re.search('^\d+$', user) else user for user in environ['AUTH_USERS'].split()]
+AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 
 # MongoDB information
 DATABASE_URI = environ['DATABASE_URI']
@@ -23,9 +26,9 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Messages
 START_MSG = """
-**Hi {username},**
+**Hi {username}, Welcome To Modzilla Apk Bot**
 
-**I'm a simple inline app searching bot which helps you to search and share applications.\nHit the go inline button or call me from any chat just by typing my username in the text field.\nNB: Make sure the name of the app you are looking for is correct else bot cannot index it while searching**.
+**I'm a simple inline app searching bot which helps you to search and share android Premium/Modded Applications from all across Telegram.\nHit the go inline button or call me from any chat just by typing my username in the text field.\nNB: Make sure the name of the application you are looking for is correct else bot cannot index it while searching.**
 """
 
 SHARE_BUTTON_TEXT = 'Checkout {username} for searching files'
