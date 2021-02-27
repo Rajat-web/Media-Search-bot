@@ -26,7 +26,7 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Messages
 START_MSG = """
-**Hi {username}, Welcome To Barn Series Bot**
+**Hi {username}, Welcome To Barn Series Bot 📹**
 
 **I'm a simple inline movie searching bot which helps you to search and share series from all across Telegram.\nHit the go inline button or call me from any chat just by typing my username in the text field.\nNB: Make sure the name of the series you are looking for is correct else bot cannot index it while searching.**
 """
