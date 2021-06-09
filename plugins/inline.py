@@ -9,6 +9,7 @@ from utils import get_search_results
 from info import MAX_RESULTS, CACHE_TIME, SHARE_BUTTON_TEXT, AUTH_USERS, AUTH_CHANNEL
 
 logger = logging.getLogger(__name__)
+cache_time = 0 if AUTH_USERS or AUTH_CHANNEL else CACHE_TIME
 
 
 @Client.on_inline_query(filters.user(AUTH_USERS) if AUTH_USERS else None)
@@ -32,7 +33,7 @@ async def answer(bot, query):
         file_type = None
 
     offset = int(query.offset or 0)
-    reply_markup = get_reply_markup(bot.username)
+    reply_markup = get_reply_markup(bot.username, query=string)
     files, next_offset = await get_search_results(string,
                                                   file_type=file_type,
                                                   max_results=MAX_RESULTS,
@@ -53,7 +54,7 @@ async def answer(bot, query):
             switch_pm_text += f" for {string}"
 
         await query.answer(results=results,
-                           cache_time=CACHE_TIME,
+                           cache_time=cache_time,
                            switch_pm_text=switch_pm_text,
                            switch_pm_parameter="start",
                            next_offset=str(next_offset))
@@ -64,15 +65,15 @@ async def answer(bot, query):
             switch_pm_text += f' for "{string}"'
 
         await query.answer(results=[],
-                           cache_time=CACHE_TIME,
+                           cache_time=cache_time,
                            switch_pm_text=switch_pm_text,
                            switch_pm_parameter="okay")
 
 
-def get_reply_markup(username):
+def get_reply_markup(username, query):
     url = 't.me/share/url?url=' + quote(SHARE_BUTTON_TEXT.format(username=username))
     buttons = [[
-        InlineKeyboardButton('Search again', switch_inline_query_current_chat=''),
+        InlineKeyboardButton('Search again', switch_inline_query_current_chat=query),
         InlineKeyboardButton('Share bot', url=url),
     ]]
     return InlineKeyboardMarkup(buttons)
