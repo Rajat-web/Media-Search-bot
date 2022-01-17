@@ -30,9 +30,9 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Messages
 default_start_msg = """
-**Hi, I'm Media Search bot**
+**Hello Dear Subscriber, Welcome To Modzilla Apk Bot**
 
-Here you can search files in inline mode. Just press following buttons and start searching.
+**I'm A Simple Inline App Searching Bot Which Helps You To Search And Share Android Premium/modded Applications From All Across Telegram.\nHit The Go Inline Button Or Call Me From Any Chat Just By Typing My Username In The Text Field.\nnb: Make Sure The Name Of The Application You Are Looking For Is Correct Else Bot Cannot Index It While Searching.**
 """
 
 START_MSG = environ.get('START_MSG', default_start_msg)
