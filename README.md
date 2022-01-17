@@ -12,7 +12,6 @@
 
 
 ### Hard Way
-
 ```bash
 # Create virtual environment
 python3 -m venv env
@@ -29,8 +28,28 @@ python3 bot.py
 ```
 Check [`sample_info.py`](sample_info.py) before editing [`info.py`](info.py) file
 
-## Variables
+### Docker
+```
+docker run -d \
+    -e BOT_TOKEN="123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11" \
+    -e API_ID='12345' \
+    -e API_HASH='0123456789abcdef0123456789abcdef' \
+    -e CHANNELS='-10012345678' \
+    -e ADMINS='123456789' \
+    -e DATABASE_URI="mongodb+srv://...mongodb.net/Database?retryWrites=true&w=majority" \
+    -e DATABASE_NAME=databasename \
+    --restart on-failure \
+    --name mediasearchbot botxtg/media-search-bot
+```
+You can also run with `env` file like below,
+```
+docker run -d \ 
+     --env-file .env \
+     --restart on-failure \
+     --name mediasearchbot botxtg/media-search-bot
+```
 
+## Variables
 ### Required Variables
 * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
 * `API_ID`: Get this value from [telegram.org](https://my.telegram.org/apps)
@@ -42,14 +61,13 @@ Check [`sample_info.py`](sample_info.py) before editing [`info.py`](info.py) fil
 
 ### Optional Variables
 * `COLLECTION_NAME`: Name of the collections. Defaults to Telegram_files. If you going to use same database, then use different collection name for each bot
-* `MAX_RESULTS`: Maximum limit for inline search results
 * `CACHE_TIME`: The maximum amount of time in seconds that the result of the inline query may be cached on the server
 * `USE_CAPTION_FILTER`: Whether bot should use captions to improve search results. (True/False)
 * `AUTH_USERS`: Username or ID of users to give access of inline search. Separate multiple users by space. Leave it empty if you don't want to restrict bot usage.
 * `AUTH_CHANNEL`: Username or ID of channel. Without subscribing this channel users cannot use bot.
+* `START_MSG`: Welcome message for start command.
 * `INVITE_MSG`: Auth channel invitation message.
 * `USERBOT_STRING_SESSION`: User bot string session.
-
 ## Admin commands
 ```
 channel - Get basic infomation about channels
@@ -74,3 +92,4 @@ Contributions are welcome.
 
 ## License
 Code released under [The GNU General Public License](LICENSE).
+
