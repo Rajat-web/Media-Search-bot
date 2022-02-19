@@ -36,5 +36,5 @@ default_start_msg = """
 """
 
 START_MSG = environ.get('START_MSG', default_start_msg)
-SHARE_BUTTON_TEXT = 'Checkout {username} for searching files'
+SHARE_BUTTON_TEXT = 'Checkout {username} For Searching Premium/Hacked/Cracked Android Applications..\n\nPowered By @Modzilla'
 INVITE_MSG = environ.get('INVITE_MSG', 'Please join @.... to use this bot')
